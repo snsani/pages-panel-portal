@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · leyu 访问笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fce9d7 0%, #f5dcc6 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #2c3a2f;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 255, 250, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 3rem 2.8rem;
+            box-shadow: 0 20px 35px -8px rgba(140, 90, 50, 0.2), 0 8px 18px rgba(100, 60, 30, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 245, 230, 0.7);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.8rem; }
+            .card { padding: 2rem 1.4rem; border-radius: 28px; }
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #3d2b1b;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+            background: linear-gradient(130deg, #7b5d42, #a77953);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6c5a4b;
+            border-left: 4px solid #dbb68b;
+            padding-left: 1rem;
+            margin: 0.5rem 0 2rem 0;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            color: #3d3a35;
+        }
+
+        .text-block {
+            margin-bottom: 1.6rem;
+        }
+
+        .text-block p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight-link-wrap {
+            background: #f7efe7;
+            padding: 0.8rem 1.4rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 0.5rem 0 0.8rem 0;
+            transition: background 0.2s;
+        }
+
+        .highlight-link-wrap:hover {
+            background: #ebdfd3;
+        }
+
+        a {
+            color: #926b47;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #5f3f29;
+            border-bottom-color: #b58c66;
+        }
+
+        .sentence-link {
+            display: inline;
+        }
+
+        .block-quote {
+            background: #faf3ea;
+            border-radius: 24px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+            border-left: 6px solid #d6ad82;
+            color: #4f3e31;
+            font-style: normal;
+            box-shadow: inset 0 1px 4px rgba(255, 220, 180, 0.2);
+        }
+
+        .block-quote p {
+            margin-bottom: 0.3rem;
+        }
+
+        .block-quote cite {
+            display: block;
+            margin-top: 0.7rem;
+            font-size: 0.9rem;
+            color: #7e6a58;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-mini {
+            background: #f7ede3;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0 1.2rem 0;
+        }
+
+        .faq-mini strong {
+            color: #5f4230;
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.6rem;
+            font-size: 0.97rem;
+        }
+
+        .faq-mini p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e1d1c0;
+            font-size: 0.92rem;
+            color: #716151;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-note .tag {
+            background: #e3d3c2;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #4d3b2c;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.9rem; }
+            .block-quote { padding: 1.2rem 1.2rem; }
+            .faq-mini { padding: 1.2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>leyu · 一份简明访问指南</h1>
+        <div class="subhead">从入口到习惯，温和地梳理几个小提醒</div>
+
+        <div class="intro text-block">
+            <p>无论你是第一次听说 <a href="https://panel-portal-leyu.com" class="sentence-link">leyu</a>，还是已经使用过一段时间，偶尔都会遇到同一个问题：当你想打开它时，最顺畅的路径是什么？这份指南不打算堆砌功能，而是从“怎样轻松到达”的角度，分享几个朴素的经验。</p>
+        </div>
+
+        <div class="text-block">
+            <p>最直接的方式，就是把 <a href="https://panel-portal-leyu.com">leyu</a> 的地址保存在浏览器的书签栏里。一个命名清晰的书签，比任何搜索都快。如果你习惯使用密码管理器或收藏夹，也可以将地址添加到常用列表。这样一来，每次需要时，只需一次点击或一次搜索，就能直接抵达。</p>
+            <p>很多朋友会问，有没有更简单的办法？其实浏览器的地址栏本身就具备自动补全功能。你只需要输入“le”或“ley”，历史记录就会自动建议完整的链接。保持浏览器同步登录，在不同设备上也能延续这份便利。</p>
+        </div>
+
+        <div class="block-quote">
+            <p>📌 一个小提醒：如果你发现页面加载稍慢或无法打开，可以先检查一下网络连接，或者尝试刷新一次。多数临时波动在几秒内就会恢复。另外，建议使用最新版本的 Chrome、Edge 或 Safari 浏览器，兼容性会更好。</p>
+            <cite>—— 来自日常使用中的观察</cite>
+        </div>
+
+        <div class="text-block">
+            <p>关于安全性，有一点值得留意：只通过你自己保存或官方渠道获取的地址访问。不要轻信来自陌生私信、非官方论坛里的链接，尤其是当你被催促“立刻登录”的时候。保持谨慎，是网络时代最基本的自我保护。</p>
+            <p>如果你通常在一个固定的设备上操作，可以考虑将 <a href="https://panel-portal-leyu.com">leyu</a> 设置为浏览器的启动页或新标签页。这样每次打开浏览器，它就在那里，不用再费心去找。当然，习惯因人而异，找到最适合自己的方式就好。</p>
+        </div>
+
+        <div class="faq-mini">
+            <strong>❓ 一些常见的小问题</strong>
+            <p><span style="font-weight: 500;">Q：</span> 页面提示“连接不安全”怎么办？<br>
+            <span style="font-weight: 500;">A：</span> 先确认地址栏是否为 https 开头，如果是，一般属于临时证书校验，刷新或稍等即可。如果持续出现，建议检查系统时间或网络环境。</p>
+            <p><span style="font-weight: 500;">Q：</span> 保存的书签突然打不开了？<br>
+            <span style="font-weight: 500;">A：</span> 可以尝试清除浏览器缓存或 DNS 缓存。多数情况是本地缓存过期导致，与站点本身无关。</p>
+        </div>
+
+        <div class="text-block">
+            <p>最后想说的是，工具的意义在于服务日常。与其记住一大堆操作步骤，不如建立一个小小的习惯：把最常去的地方放在触手可及的位置。leyu 对你来说可能是众多站点之一，但每次顺畅的访问，都会让体验更轻松一点。</p>
+        </div>
+
+        <div class="footer-note">
+            <span>✏️ 指南 · 简洁版</span>
+            <span class="tag">#访问提醒</span>
+        </div>
+    </div>
+</body>
+</html>
